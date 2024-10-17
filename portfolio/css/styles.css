@@ -1,0 +1,317 @@
+/* all */
+
+@font-face {
+    font-family: "font1";
+    src: url(font/mafont.ttf);
+}
+
+* {
+    font-family: sans-serif;
+}
+
+@keyframes img-zoom {
+    0% {
+        width: 1%;
+    }
+    100% {
+        width: 50%;
+    }
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(90deg, rgba(98,52,0,1) 15%, rgba(231,139,11,1) 50%, rgba(98,52,0,1) 85%);
+}
+
+.fixed {
+    position: sticky;
+}
+
+header {
+    top: 0;
+    text-align: center;
+    padding: 20px;
+    background-color: #555;
+    color: white;
+    z-index: 1;
+}
+
+nav {
+    width: 100%;
+    top: 119.88px;
+    background-color: #333;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 0;
+    list-style: none;
+}
+
+nav li {
+    width: 100px;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    flex: 1;
+}
+
+nav a:hover {
+    background-color: #AAA;
+    color: black;
+}
+
+/* index */
+
+#profil {
+    background-color: burlywood;
+    padding: 100px;
+    display: grid;
+    grid-template-areas:
+	"image description";
+    grid-template-columns: 1fr 2fr;
+}
+
+#photo-profil {
+    grid-area: image;
+}
+
+#photo-profil img {
+    width: 50%;
+    max-width: none;
+    border-radius: 50px;
+    object-fit: contain;
+    animation: img-zoom 1s;
+}
+
+#profil p {
+    grid-area: description;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+
+#index-main, aside, footer {
+    margin: 30px;
+    padding: 20px;
+    background-color: rgb(255, 191, 73);
+    border-radius: 50px;
+}
+
+#not-header {
+    display: grid;
+    grid-template-areas:
+	"formation aside"
+	"certificats aside"
+	"autres aside"
+	"footer footer";
+    grid-template-columns: 3fr 1fr;
+}
+
+.diviseur {
+    background-color: saddlebrown;
+}
+
+.x {
+    height: 5px;
+}
+
+.y {
+    width: 5px;
+}
+
+#formation {
+    grid-area: formation;
+}
+
+#certificats {
+    grid-area: certificats;
+}
+
+#autres {
+    grid-area: autres;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-evenly
+}
+
+footer ul {
+    list-style: none;
+}
+
+#infos li:first-of-type::before {
+    font-family: font1;
+    content: "\e055";
+}
+
+#infos li:nth-of-type(2)::before {
+    font-family: font1;
+    content: '\e125';
+}
+
+#infos li:nth-of-type(3)::before {
+    font-family: font1;
+    content: '\e0ba';
+}
+
+#infos li:last-of-type::before {
+    font-family: font1;
+    content: '\003f';
+}
+
+#reseaux li a {
+    text-decoration: none;
+}
+
+#reseaux li:first-of-type::before {
+    font-family: font1;
+    content: '\e0e3';
+}
+
+/* compétences */
+
+.barre {
+    height: 10px;
+    width: 200px;
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.niveau {
+    height: 5px;
+    background-color: #AAA;
+    border-radius: 5px;
+    position: relative;
+    top: 25%;
+    left: 2%;
+}
+
+.niv-html {
+    width: 80%;
+}
+
+.niv-python {
+    width: 80%;
+}
+
+.niv-php {
+    width: 20%;
+}
+
+.niv-cplus {
+    width: 40%;
+}
+
+.niv-word {
+    width: 60%;
+}
+
+.niv-excel {
+    width: 60%;
+}
+
+.niv-photoshop {
+    width: 40%;
+}
+
+.niv-illustrator {
+    width: 40%;
+}
+
+.niv-anglais {
+    width: 95%;
+}
+
+/* Photoshop & Illustrator */
+
+.gallerie {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    justify-content: space-around;
+}
+
+.gallerie figure {
+    width: 420px;
+    margin: 50px;
+    border: solid black 2px;
+    background-color: sienna;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.gallerie img {
+    width: 400px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.gallerie figcaption {
+    text-align: center;
+    position: relative;
+    top: 5px;
+    margin: auto;
+    border: 1px solid black;
+    background-color: goldenrod;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.TBC {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin: 100px;
+}
+
+#EE {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    #profil {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #photo-profil {
+        margin: auto;
+    }
+
+    #not-header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .y {
+        display: none;
+    }
+}
+
+@media (max-width: 465px) {
+    #EE {
+        display: block;
+    }
+}
